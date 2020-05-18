@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body style="background-image: url('https://i1.wp.com/loucosporcarro.com.br/wp-content/uploads/2011/05/carro-sol-e-estrada-wallpaper-16412.jpg?ssl=1');
+		background-attachment: fixed; background-size: 100%; background-repeat: no-repeat;">
+	<h:form>
+			<h1 style="	background-color: white; padding-left:40%;
+				opacity: 0.7;	border-radius: 10px;">Concessionária
+				    <p:growl id="message" showDetail="true" />
+    				<p:commandLink value="Logout" update="message" style="padding-left:43%; font-size: 18px">
+        				<p:confirm header="Logout" message="Você tem certeza?" style="text-align: center" />
+    				</p:commandLink>
+			</h1>
+			
+			    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" action="#{CarroBean.sair}"/>
+        			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no"/>
+    			</p:confirmDialog> 
+    			
+    		<p/>
+    		
+    <p:inputText style="width: 50%"/>
+    		
+	
+	<p:dialog header="Novo Carro" modal="true" visible="false" widgetVar="novo">
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Série: "/>
+			<p:inputText value="#{CarroBean.carro.seriecarro}"/>
+			<p:outputLabel value="Ano: "/>
+			<p:inputNumber value="#{CarroBean.carro.ano}"/>
+			<p:outputLabel value="Modelo: "/>
+				<p:selectOneMenu value="#{CarroBean.carro.modelocarro.modelo}">
+					<f:selectItem itemLabel="" itemValue=""/>
+					<f:selectItems value="#{CarroBean.listamodelos}" var="modelos"
+					itemLabel="#{modelos.modelo}" itemValue="#{modelos.modelo}"/>
+				</p:selectOneMenu>
+			<p:outputLabel value="Cor: "/>
+			<p:outputLabel value="Placa: "/>
+		</p:panelGrid>
+	</p:dialog>
+
+	</h:form>
+</h:body>
+</html>

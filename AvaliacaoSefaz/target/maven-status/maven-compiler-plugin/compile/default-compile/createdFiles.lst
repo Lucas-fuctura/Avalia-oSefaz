@@ -1,0 +1,13 @@
+controle\CarroBean.class
+controle\LoginBean.class
+dao\CarroDAOImpl.class
+util\JpaUtil.class
+entidade\ModeloCarro.class
+dao\CarroDAO.class
+entidade\PecasCarro.class
+dao\UsuarioDAO.class
+dao\UsuarioDAOImpl.class
+entidade\Usuario.class
+entidade\Carro.class
+entidade\CorCarro.class
+TesteConexao.class
